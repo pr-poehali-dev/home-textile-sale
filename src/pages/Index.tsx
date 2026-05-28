@@ -519,6 +519,12 @@ export default function Index() {
                     onBlur={e => (e.target.style.borderColor = "hsl(210 10% 84%)")}
                   />
                 </div>
+                <div className="flex items-start gap-3 rounded-xl px-4 py-3 border" style={{ borderColor: `${C.teal}25`, background: `${C.teal}08` }}>
+                  <Icon name="Truck" size={18} style={{ color: C.teal, flexShrink: 0, marginTop: 1 }} />
+                  <p className="font-body text-sm" style={{ color: C.choco }}>
+                    Доставляем <strong>Почтой России</strong>, <strong>СДЭК</strong> и удобной вам транспортной компанией
+                  </p>
+                </div>
                 <button type="submit"
                   className="w-full py-4 rounded-xl font-body font-semibold text-base transition-all duration-200 hover:opacity-90 hover:shadow-lg text-white"
                   style={{ background: C.teal }}>
