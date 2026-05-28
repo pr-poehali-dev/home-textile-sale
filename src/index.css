@@ -4,42 +4,44 @@
 
 @layer base {
   :root {
-    --background: 36 33% 97%;
-    --foreground: 20 25% 18%;
+    --background: 185 18% 97%;
+    --foreground: 25 30% 14%;
 
-    --card: 36 30% 95%;
-    --card-foreground: 20 25% 18%;
+    --card: 185 14% 95%;
+    --card-foreground: 25 30% 14%;
 
-    --popover: 36 30% 95%;
-    --popover-foreground: 20 25% 18%;
+    --popover: 185 14% 95%;
+    --popover-foreground: 25 30% 14%;
 
-    --primary: 14 55% 45%;
-    --primary-foreground: 36 60% 97%;
+    --primary: 183 48% 36%;
+    --primary-foreground: 180 60% 97%;
 
-    --secondary: 350 30% 82%;
-    --secondary-foreground: 20 25% 18%;
+    --secondary: 210 10% 78%;
+    --secondary-foreground: 25 30% 14%;
 
-    --muted: 36 20% 90%;
-    --muted-foreground: 20 15% 45%;
+    --muted: 210 8% 90%;
+    --muted-foreground: 210 8% 44%;
 
-    --accent: 350 40% 75%;
-    --accent-foreground: 20 25% 18%;
+    --accent: 183 35% 65%;
+    --accent-foreground: 25 30% 14%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 36 20% 85%;
-    --input: 36 20% 85%;
-    --ring: 14 55% 45%;
+    --border: 210 10% 84%;
+    --input: 210 10% 84%;
+    --ring: 183 48% 36%;
 
     --radius: 0.75rem;
 
-    /* Custom brand colors */
-    --terracotta: 14 55% 45%;
-    --blush: 350 40% 75%;
-    --cream: 36 60% 93%;
-    --warm-brown: 20 35% 28%;
-    --sage: 140 18% 62%;
+    /* Brand palette: teal + grey + chocolate */
+    --teal: 183 48% 36%;
+    --teal-light: 183 42% 52%;
+    --teal-pale: 183 30% 88%;
+    --grey: 210 10% 60%;
+    --grey-light: 210 8% 92%;
+    --choco: 25 45% 26%;
+    --choco-dark: 22 50% 18%;
   }
 }
 
@@ -70,28 +72,23 @@
     font-family: "Golos Text", sans-serif;
   }
 
-  .text-terracotta {
-    color: hsl(var(--terracotta));
+  .text-teal {
+    color: hsl(var(--teal));
   }
-
-  .bg-terracotta {
-    background-color: hsl(var(--terracotta));
+  .bg-teal {
+    background-color: hsl(var(--teal));
   }
-
-  .bg-cream {
-    background-color: hsl(var(--cream));
+  .bg-teal-pale {
+    background-color: hsl(var(--teal-pale));
   }
-
-  .bg-blush {
-    background-color: hsl(350 40% 88%);
+  .text-choco {
+    color: hsl(var(--choco));
   }
-
-  .text-warm-brown {
-    color: hsl(var(--warm-brown));
+  .bg-choco {
+    background-color: hsl(var(--choco));
   }
-
-  .border-terracotta {
-    border-color: hsl(var(--terracotta));
+  .border-teal {
+    border-color: hsl(var(--teal));
   }
 
   .animate-fade-in {
@@ -129,36 +126,6 @@
   }
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-  }
-
-  .pattern-bg {
-    background-image:
-      radial-gradient(
-        circle at 20% 20%,
-        hsl(350 40% 88% / 0.4) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 80%,
-        hsl(14 55% 45% / 0.08) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 60% 30%,
-        hsl(36 60% 93% / 0.6) 0%,
-        transparent 40%
-      );
-  }
-
-  .section-divider {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      hsl(var(--terracotta) / 0.3),
-      transparent
-    );
-    height: 1px;
-    width: 100%;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   }
 }
