@@ -366,7 +366,7 @@ export default function Index() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { icon: "Leaf", title: "Натуральные ткани", desc: "Хлопок и лён высшего качества" },
-              { icon: "Truck", title: "Доставка по России", desc: "Отправляем в любой город" },
+              { icon: "Truck", title: "Доставка по России", desc: "Почта России, СДЭК и удобной вам транспортной компанией" },
               { icon: "Heart", title: "С любовью", desc: "Каждое изделие с заботой" },
               { icon: "RotateCcw", title: "Возврат 14 дней", desc: "Если что-то не понравится" },
             ].map((b) => (
