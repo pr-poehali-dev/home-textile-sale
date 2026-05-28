@@ -266,6 +266,38 @@ export default function Index() {
         </button>
       </section>
 
+      {/* ── GARDEN BANNER ── */}
+      <section className="relative overflow-hidden" style={{ minHeight: 420 }}>
+        <img
+          src="https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/50229539-cc03-4adf-88bd-681e8aa77709.jpg"
+          alt="Подушки для сада и дачи"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 50%, rgba(25,18,10,0.72) 100%)" }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 h-full flex items-center justify-end py-16">
+          <div className="max-w-sm text-right">
+            <p className="font-body text-sm tracking-wider uppercase mb-2" style={{ color: "rgba(255,255,255,0.75)" }}>
+              комфортный отдых создадут
+            </p>
+            <h2 className="font-display text-5xl md:text-6xl font-bold leading-[1.0] mb-4" style={{ color: "#ffffff" }}>
+              ПОДУШКИ<br />
+              ДЛЯ САДА<br />
+              И ДАЧИ
+            </h2>
+            <p className="font-body text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.82)" }}>
+              по вашим размерам<br />из наших лучших материалов
+            </p>
+            <button
+              onClick={() => scrollTo("order")}
+              className="font-body font-semibold text-sm px-6 py-3 rounded-xl transition-all hover:opacity-90"
+              style={{ background: C.teal, color: "#fff" }}
+            >
+              Заказать подушки
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* ── CATALOG ── */}
       <section id="catalog" className="py-20" style={textureBg("rgba(225,244,244,0.85)")}>
         <div className="max-w-6xl mx-auto px-4">
