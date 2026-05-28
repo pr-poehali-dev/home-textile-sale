@@ -147,7 +147,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
           <button onClick={() => scrollTo("hero")} className="flex flex-col leading-none text-left">
-            <span className="font-display text-xl font-bold leading-tight" style={{ color: C.teal }}>
+            <span className="font-display text-xl leading-tight" style={{ color: C.teal, fontWeight: 900 }}>
               Подушечка-Душечка Моя
             </span>
             <span className="font-body text-xs tracking-widest uppercase" style={{ color: C.grey }}>
@@ -167,10 +167,10 @@ export default function Index() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <a href="tel:+79001234567" className="flex items-center gap-1.5 text-sm transition-colors"
+            <a href="tel:+79069528766" className="flex items-center gap-1.5 text-sm transition-colors"
               style={{ color: "hsl(25 30% 14% / 0.65)" }}>
               <Icon name="Phone" size={14} />
-              +7 (900) 123-45-67
+              +7 (906) 952-87-66
             </a>
             <button onClick={() => scrollTo("order")}
               className="text-sm px-4 py-2 rounded-lg font-medium transition-all duration-200"
@@ -189,7 +189,7 @@ export default function Index() {
             {[["Каталог","catalog"],["О нас","about"],["Отзывы","reviews"],["Контакты","contacts"]].map(([label,id]) => (
               <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm" style={{ color: "hsl(25 30% 14% / 0.7)" }}>{label}</button>
             ))}
-            <a href="tel:+79001234567" className="text-sm font-medium" style={{ color: C.teal }}>+7 (900) 123-45-67</a>
+            <a href="tel:+79069528766" className="text-sm font-medium" style={{ color: C.teal }}>+7 (906) 952-87-66</a>
             <button onClick={() => scrollTo("order")} className="text-sm px-4 py-2.5 rounded-lg font-medium text-white" style={{ background: C.teal }}>
               Заказать
             </button>
@@ -523,8 +523,8 @@ export default function Index() {
                 Связаться с нами
               </div>
               {[
-                { icon: "Phone", label: "+7 (900) 123-45-67", href: "tel:+79001234567" },
-                { icon: "Mail", label: "hello@podushka.ru", href: "mailto:hello@podushka.ru" },
+                { icon: "Phone", label: "+7 (906) 952-87-66", href: "tel:+79069528766" },
+                { icon: "Mail", label: "fey.75@mail.ru", href: "mailto:fey.75@mail.ru" },
                 { icon: "MessageCircle", label: "Написать в WhatsApp", href: "#" },
               ].map((c) => (
                 <a key={c.label} href={c.href}
