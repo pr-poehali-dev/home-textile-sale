@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/e547f75d-693c-4d38-bbc4-a878bbb971d8.jpg";
-const PILLOWS_IMG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/1da58243-8fbb-46a6-a715-24265ee9b777.jpg";
-const KITCHEN_IMG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/8ade72bd-ca09-4e15-9e13-e8acdefbd514.jpg";
+const HERO_IMG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/92aa41af-227b-4d54-8f18-643f655ddb4f.jpg";
+const PILLOWS_IMG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/b887e6ea-f389-4c3d-b7a5-affa3309d738.jpg";
+const KITCHEN_IMG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/files/99709bdc-2f3a-459b-9e31-ee90022a61ac.jpg";
+const TEXTURE_BG = "https://cdn.poehali.dev/projects/48f7c6ea-6edc-41df-9bd1-d1ddd946ae39/bucket/df5c7b5d-95b9-4a38-88b7-bc340f9a352b.jpeg";
 
 // Brand colors
 const C = {
@@ -131,11 +132,18 @@ export default function Index() {
     setMenuOpen(false);
   };
 
+  const textureBg = (overlay = "rgba(255,255,255,0.88)") => ({
+    backgroundImage: `linear-gradient(${overlay}, ${overlay}), url(${TEXTURE_BG})`,
+    backgroundSize: "auto, 320px",
+    backgroundRepeat: "no-repeat, repeat",
+    backgroundBlendMode: "normal",
+  });
+
   return (
-    <div className="min-h-screen bg-background font-body overflow-x-hidden">
+    <div className="min-h-screen font-body overflow-x-hidden" style={textureBg("rgba(248,252,252,0.92)")}>
 
       {/* ── HEADER ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/96 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-border" style={{ ...textureBg("rgba(248,252,252,0.96)") }}>
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
           <button onClick={() => scrollTo("hero")} className="flex flex-col leading-none text-left">
@@ -190,11 +198,7 @@ export default function Index() {
       </header>
 
       {/* ── HERO ── */}
-      <section id="hero" className="pt-16 min-h-screen flex items-center relative overflow-hidden" style={{
-        background: `radial-gradient(ellipse at 15% 25%, ${C.tealPale}55 0%, transparent 55%),
-                     radial-gradient(ellipse at 85% 75%, ${C.tealBg} 0%, transparent 50%),
-                     hsl(185 18% 97%)`
-      }}>
+      <section id="hero" className="pt-16 min-h-screen flex items-center relative overflow-hidden" style={textureBg("rgba(232,246,246,0.82)")}>
         <div className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 text-xs font-body font-medium px-3 py-1.5 rounded-full mb-6 border"
@@ -263,7 +267,7 @@ export default function Index() {
       </section>
 
       {/* ── CATALOG ── */}
-      <section id="catalog" className="py-20" style={{ background: C.tealBg }}>
+      <section id="catalog" className="py-20" style={textureBg("rgba(225,244,244,0.85)")}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
             <span className="font-body text-xs tracking-widest uppercase font-semibold" style={{ color: C.teal }}>Весь ассортимент</span>
@@ -274,8 +278,8 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat) => (
               <div key={cat.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border cursor-pointer group hover-lift"
-                style={{ borderColor: "hsl(210 10% 88%)" }}
+                className="rounded-2xl overflow-hidden shadow-sm border border-border cursor-pointer group hover-lift"
+                style={{ borderColor: "hsl(210 10% 88%)", ...textureBg("rgba(255,255,255,0.92)") }}
                 onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
               >
                 <div className="relative h-52 overflow-hidden">
@@ -325,7 +329,7 @@ export default function Index() {
       </section>
 
       {/* ── BENEFITS ── */}
-      <section className="py-16 bg-background">
+      <section className="py-16" style={textureBg("rgba(248,252,252,0.90)")}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
@@ -335,7 +339,7 @@ export default function Index() {
               { icon: "RotateCcw", title: "Возврат 14 дней", desc: "Если что-то не понравится" },
             ].map((b) => (
               <div key={b.title} className="text-center p-6 rounded-2xl border"
-                style={{ background: C.tealBg, borderColor: `${C.tealLight}30` }}>
+                style={{ borderColor: `${C.tealLight}30`, ...textureBg("rgba(255,255,255,0.88)") }}>
                 <div className="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-3"
                   style={{ background: `${C.teal}15` }}>
                   <Icon name={b.icon as "Leaf"|"Truck"|"Heart"|"RotateCcw"} size={20} style={{ color: C.teal }} />
@@ -349,7 +353,7 @@ export default function Index() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-20" style={{ background: `${C.greyLight}` }}>
+      <section id="about" className="py-20" style={textureBg("rgba(240,240,238,0.88)")}>
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img src={PILLOWS_IMG} alt="О нас"
@@ -390,7 +394,7 @@ export default function Index() {
       </section>
 
       {/* ── REVIEWS ── */}
-      <section id="reviews" className="py-20 bg-background">
+      <section id="reviews" className="py-20" style={textureBg("rgba(248,252,252,0.90)")}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
             <span className="font-body text-xs tracking-widest uppercase font-semibold" style={{ color: C.teal }}>Что говорят клиенты</span>
@@ -401,7 +405,7 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-6">
             {reviews.map((r) => (
               <div key={r.name} className="rounded-2xl p-6 border hover-lift"
-                style={{ background: C.tealBg, borderColor: `${C.tealLight}30` }}>
+                style={{ borderColor: `${C.tealLight}30`, ...textureBg("rgba(255,255,255,0.88)") }}>
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: r.stars }).map((_, i) => (
                     <span key={i} className="text-amber-400 text-sm">★</span>
@@ -427,7 +431,7 @@ export default function Index() {
       </section>
 
       {/* ── ORDER FORM ── */}
-      <section id="order" className="py-20" style={{ background: `${C.tealPale}50` }}>
+      <section id="order" className="py-20" style={textureBg("rgba(218,240,240,0.84)")}>
         <div className="max-w-2xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="font-body text-xs tracking-widest uppercase font-semibold" style={{ color: C.teal }}>Просто напишите нам</span>
@@ -437,7 +441,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-xl border" style={{ borderColor: `${C.teal}18` }}>
+          <div className="rounded-3xl p-8 shadow-xl border" style={{ borderColor: `${C.teal}18`, ...textureBg("rgba(255,255,255,0.94)") }}>
             {formSent ? (
               <div className="text-center py-8 animate-fade-in">
                 <div className="text-5xl mb-4">✨</div>
